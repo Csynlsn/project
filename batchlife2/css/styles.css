@@ -1,0 +1,157 @@
+    /*UNIVERSIAL STYLES*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border:1px solid black;
+}
+
+body {
+    font-family: 'Source Code Pro', monospace;
+    
+}
+
+.wrapper {
+    width:100%;
+    min-width:360px;
+    max-width:1700px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+img { 
+    max-width: 100%;
+} 
+
+#test {
+    height:12em;
+}
+
+    /* TOP NAV STYLES */
+@media (max-width:519px) {
+    .topnav.responsive li {
+        display:block;
+        text-align:left;
+    }
+    .topnav li {
+        display:none;
+    }
+    nav ul {
+        display:flex;
+        flex-direction:column;
+        justify-content: space-around;
+        list-style-type:none;
+    }
+    nav li {
+        font-size:1.8em;
+        margin-left:0.1em;
+    }
+    .icon {
+        font-size:2em;
+    }
+}
+
+nav ul {
+    display:flex;
+    justify-content: space-around;
+    list-style-type:none;
+}
+
+nav a {
+    font-family: 'Permanent Marker', cursive;
+    color:#ffffff;
+    font-weight: bold;
+}
+
+nav li {
+    display:inline-block;
+}
+
+header {
+    overflow: hidden;
+    background-color:lightgray;
+} 
+
+    /* LOGO/ICON STYLES */
+
+    /*increases logo's width % only on tablet*/
+@media all and (min-width:740px) and (max-width:899px) {.logo-round {  width:27%; } }
+
+img.logo-round {
+    width:20%;
+    margin: 0.3em 0 0.2em 0.5em;
+}
+
+img.logo-batch {
+    margin:0 auto;
+}
+
+/*INSTAGRAM*/
+.ig {
+    text-align: center;
+    text-decoration: none;
+    background: rgb(217, 16, 167);
+    border-radius: 50%;
+    width:1.6em;
+}
+    
+.ig:hover {
+      opacity: 0.7;
+  }
+
+
+    /* IMAGE STYLES */
+
+
+
+    /*HOME PAGE STYLES*/ 
+
+/*SHOP SECTION*/
+
+
+
+
+
+
+
+
+
+    /* FOOTER STYLES  */
+
+/*GRID FOR TOP OF FOOTER*/
+footer {
+    display:grid;
+    grid-gap:4px;
+    grid-template-columns: 
+        repeat(6, 1fr);  
+}
+.sign-up {
+    grid-column: 1 / span 3;
+}
+.quick-links {
+    grid-column: 4 / span 3;
+}
+.bottom-links {
+    grid-column: 1 / span 6;
+}
+
+/*BOTTOM FOOTER STYLES*/
+footer {
+    height: auto;
+    background:#e7ebee;
+}
+.bottom-links {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-evenly;
+}
+.bottom-links li {
+    display:inline-block;
+    list-style-type:none;
+}

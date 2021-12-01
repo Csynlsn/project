@@ -1,0 +1,78 @@
+/* GRID */
+
+.wrapper {
+    display:grid;
+    grid-gap:20px;
+    grid-template-areas:
+        "header"
+        "main"
+        "shop"
+        "about"
+        "aside"
+        "contact"
+        "footer";
+}
+
+header {
+    grid-area: header;
+}
+
+.home-main {
+    grid-area: main;
+}
+
+.home-about {
+    grid-area: about;
+}
+
+.home-shop {
+    grid-area: shop;
+}
+
+.home-contact {
+    grid-area: contact;
+}
+
+.home-aside {
+    grid-area: aside;
+}
+
+footer {
+    grid-area: footer;
+}
+
+
+/* START TABLET */
+@media (min-width: 500px) {
+    
+    .wrapper {
+        grid-template-columns:
+            repeat(3, 1fr);
+        grid-template-areas: 
+        "header header header"
+        "main main main"
+        "main main main"
+        "about shop aside"
+        "about shop aside"
+        "contact contact contact"
+        "footer footer footer";    
+    }
+
+} /* END @media (min-width: 500px) TABLET */
+
+
+/* START DESKTOP */
+@media (min-width:800px) {
+    .wrapper {
+        grid-template-columns: 
+            repeat(4, 1fr);
+        grid-template-areas: 
+        "header header header header" 
+        "main main about about" 
+        "shop shop shop shop" 
+        "aside aside contact contact" 
+        "footer footer footer footer";     
+    } 
+
+} /* END @media (min-width: 800px) DESKTOP */
+
