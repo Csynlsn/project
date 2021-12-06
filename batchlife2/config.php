@@ -1,90 +1,55 @@
 <?php
-
-//---------------our config file FROM WK 8------------------------------
 ob_start();  // prevents header errors before reading the whole page!
 define('DEBUG', 'TRUE');  // We want to see our errors
 
-include('credentials.php');
-//------------------------------- FROM WK 8 CONFIG
 
 define('THIS_PAGE', basename($_SERVER['PHP_SELF']));
-// $key             $value
 $nav['index.php'] = 'Home';
 $nav['about.php'] = 'About';
-$nav['daily.php'] = 'Daily';
-$nav['project.php'] = 'Project';
+$nav['shop.php'] = 'Shop';
 $nav['contact.php'] = 'Contact';
-// $nav['thx.php'] = 'Thank You';
-$nav['gallery.php'] = 'Gallery';
 
-// create a function for our navigation
-//  so the function is called out on our header.php page
 
 function my_nav($nav) {
 $my_return = '';
 foreach($nav as  $key => $value) {
 if(THIS_PAGE == $key) {
-$my_return .= '<li><a href=" '.$key.' " class="current">'.$value.'</a></li>';    
+$my_return .= '
+<li><a href=" '.$key.' " class="current">'.$value.'</a></li>';    
 } else {
     $my_return .= '<li><a href=" '.$key.' ">'.$value.'</a></li>'; 
 } // end else
-} // end foreach ... call out return before the end of the fucntion
+} // end foreach 
 return $my_return;
-} // end function
+} // end my_nav
 
 switch(THIS_PAGE) {
     case 'index.php'; 
-    $title = 'Home page of our IT 261 Website';
+    $title = 'Batch Life';
     $body = 'home';
-    $headline = 'Welcome to our IT 261 Website Home Page';
-    $background_color = ' background-color:#ffffff';
+    $headline = 'Designs For The Everyday Unicorn';
     break;
 
     case 'about.php'; 
-    $title = 'About page of our IT 261 Website';
+    $title = 'About Batch Life';
     $body = 'about inner';
-    $headline = 'Welcome to our About Page';
-    $background_color = ' background-color:#ffffff';
+    $headline = 'About Vivian';
     break;
 
-    case 'daily.php'; 
-    $title = 'Daily page of our IT 261 Website';
+    case 'shop.php'; 
+    $title = 'Shop Batch Life';
     $body = 'daily inner';
-    $headline = 'Welcome to our Daily page where my HW3 Switch will display';
-    break;
-
-    case 'project.php'; 
-    $title = 'Project page of our IT 261 Website';
-    $body = '';
-    $headline = 'Heavy Metal Musicians';
-    $background_color = ' background-color:#ffffff';
+    $headline = 'Handmade in West Seattle';
     break;
 
     case 'contact.php'; 
-    $title = 'Contact page of our IT 261 Website';
-    $body = 'contact inner';
-    $headline = 'Welcome to Our Contact Page';
-    break;
-
-    case 'project-view.php'; 
-    $title = 'Project Page';
+    $title = 'Contact Batch Life';
     $body = '';
-    $background_color = ' background-color:#ffffff';
-    break;
-
-    case 'thx.php'; 
-    $title = 'Thank You Page';
-    $body = 'thank you inner';
-    $headline = 'Thanks For Ordering Our Cheese!';
-    break;
-
-    case 'gallery.php'; 
-    $title = 'Gallery page of our IT 261 Website';
-    $body = 'gallery inner';
-    $headline = 'Welcome to our Gallery Page';
-    $background_color = ' background-color:#ffffff';
+    $headline = 'Contact Vivian';
     break;
 }
+
+
 
 //this is beggining of switch for HW3
 if(isset($_GET['today'])) {
@@ -99,23 +64,18 @@ $today = date('l');
 $first_name = '';
 $last_name = '';
 $email = '';
-$phone = '';
-$preference = '';
-$cheese = '';
-$country = '';
 $comments = '';
-$policy = '';
+
 
 $first_name_Err = '';
 $last_name_Err = '';
 $email_Err = '';
-$phone_Err = '';
-$preference_Err = '';
-$cheese_Err = '';
-$country_Err = '';
 $comments_Err = '';
-$policy_Err = '';
 
+//<ul>
+            //<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+               //<?php echo my_nav($nav);
+           // </ul>
 
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
